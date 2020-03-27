@@ -1,0 +1,2074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frm_principal</class>
+ <widget class="QMainWindow" name="frm_principal">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>839</width>
+    <height>812</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Balança</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../imagens/balanca_icon.png</normaloff>../imagens/balanca_icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+	background: white;
+}</string>
+  </property>
+  <widget class="QWidget" name="cwd_corpo_principal">
+   <layout class="QGridLayout" name="grl_principal">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetMaximumSize</enum>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="1" column="1">
+     <widget class="QFrame" name="fra_conteudo">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QFrame" name="fra_menu_horizontal">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>41</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>41</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background: white;
+}</string>
+      </property>
+      <layout class="QGridLayout" name="grl_menu_horizontal">
+       <property name="leftMargin">
+        <number>5</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="1" rowspan="2">
+        <spacer name="separador_vertical_menu_horizontal">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>38</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="btn_minimizar">
+         <property name="styleSheet">
+          <string notr="true">QPushButton#btn_minimizar:hover{
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_minimizar:pressed {
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.2);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../imagens/minimizar-.png</normaloff>../imagens/minimizar-.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="6">
+        <widget class="QPushButton" name="btn_close">
+         <property name="styleSheet">
+          <string notr="true">QPushButton#btn_close:hover{
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_close:pressed {
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.2);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../imagens/fechar.png</normaloff>../imagens/fechar.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QPushButton" name="btn_maximize_rest">
+         <property name="styleSheet">
+          <string notr="true">QPushButton#btn_maximize_rest:hover{
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_maximize_rest:pressed {
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.2);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../imagens/rest-maximize.png</normaloff>../imagens/rest-maximize.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" rowspan="2">
+        <widget class="QPushButton" name="btn_slider">
+         <property name="styleSheet">
+          <string notr="true">QPushButton#btn_slider{
+	border-radius: 5px;
+}
+QPushButton#btn_slider:hover{
+	border: 1px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_slider:pressed {
+	border: 1px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.2);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../imagens/slider.png</normaloff>../imagens/slider.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" rowspan="2">
+        <spacer name="separador_horizontal_menu_horizontal">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>625</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="5">
+        <widget class="QPushButton" name="btn_maximize">
+         <property name="styleSheet">
+          <string notr="true">QPushButton#btn_maximize:hover{
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_maximize:pressed {
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.2);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../imagens/maximize.png</normaloff>../imagens/maximize.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0" rowspan="2">
+     <widget class="QFrame" name="fra_menu_vertical">
+      <property name="minimumSize">
+       <size>
+        <width>80</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>80</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background: #00beff;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="grl_menu_vertical">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="2">
+        <spacer name="separacao_topo_logo">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>60</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="0" rowspan="2" colspan="2">
+        <spacer name="separacao_borda_logo">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>15</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLabel" name="lbl_logo">
+         <property name="minimumSize">
+          <size>
+           <width>195</width>
+           <height>61</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>195</width>
+           <height>61</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="pixmap">
+          <pixmap>../imagens/BALANCA-LOGO.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <spacer name="separacao_logo_menu">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="2">
+        <spacer name="separacao_fundo_menu">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="0" colspan="3">
+        <layout class="QGridLayout" name="grl_menu">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetMinAndMaxSize</enum>
+         </property>
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item row="4" column="0">
+          <widget class="QPushButton" name="btn_movimento">
+           <property name="maximumSize">
+            <size>
+             <width>212</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>Movimento</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 22px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_movimento:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_movimento:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+           </property>
+           <property name="text">
+            <string>    Movimento</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imagens/movimento-vector.png</normaloff>../imagens/movimento-vector.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QPushButton" name="btn_configuracao">
+           <property name="maximumSize">
+            <size>
+             <width>212</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>Configuração</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 22px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_configuracao:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_configuracao:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+           </property>
+           <property name="text">
+            <string>    Configuração</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imagens/configuracao-vector.png</normaloff>../imagens/configuracao-vector.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="0">
+          <widget class="QPushButton" name="btn_sobre">
+           <property name="maximumSize">
+            <size>
+             <width>212</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>Sobre</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 22px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_sobre:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_sobre:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+           </property>
+           <property name="text">
+            <string>    Sobre</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imagens/informacoes-vector.png</normaloff>../imagens/informacoes-vector.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="0">
+          <widget class="QFrame" name="fra_submenu_sobre">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QFrame {
+	border: 1px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="vrl_subemenu_sobre">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="btn_sobre_informacoes">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Informações</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_sobre_informacoes:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_sobre_informacoes:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Informações</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/informacao-vector.png</normaloff>../imagens/informacao-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="btn_cadastro">
+           <property name="maximumSize">
+            <size>
+             <width>212</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>Cadastro</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 22px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_cadastro:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_cadastro:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+           </property>
+           <property name="text">
+            <string>    Cadastro</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imagens/caixa_pasta.png</normaloff>../imagens/caixa_pasta.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QPushButton" name="btn_relatorio">
+           <property name="maximumSize">
+            <size>
+             <width>212</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>Relatório</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 22px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_relatorio:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_relatorio:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+           </property>
+           <property name="text">
+            <string>    Relatório</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imagens/relatorio-vector.png</normaloff>../imagens/relatorio-vector.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" rowspan="10">
+          <widget class="QScrollBar" name="vsb_menu">
+           <property name="minimumSize">
+            <size>
+             <width>12</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>10</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QFrame" name="fra_submenu_relatorio">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>91</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QFrame {
+	border: 1px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="vrl_submenu_relatorio">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="btn_relatorio_cadastros">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Cadastros</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_relatorio_cadastros:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_relatorio_cadastros:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Cadastros</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/relatorio-cadastros-vector.png</normaloff>../imagens/relatorio-cadastros-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_relatorio_caixa">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Caixa</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_relatorio_caixa:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_relatorio_caixa:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Caixa</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/relatorio-caixa-vector.png</normaloff>../imagens/relatorio-caixa-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_relatorio_pesos">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Pesos</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_relatorio_pesos:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_relatorio_pesos:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Pesos</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/relatorio-pesos-vector.png</normaloff>../imagens/relatorio-pesos-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QFrame" name="fra_submenu_cadastro">
+           <property name="minimumSize">
+            <size>
+             <width>78</width>
+             <height>235</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QFrame {
+	border: 1px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="vrl_submenu_cadastro">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="btn_cadastro_empresa">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Empresa</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_cadastro_empresa:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_cadastro_empresa:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Empresa</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/empresa-vector.png</normaloff>../imagens/empresa-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_cadastro_cliente">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Cliente</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_cadastro_cliente:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_cadastro_cliente:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Cliente</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/cliente-vector.png</normaloff>../imagens/cliente-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_cadastro_fornecedor">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Fornecedor</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_cadastro_fornecedor:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_cadastro_fornecedor:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Fornecedor</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/fornecedor-vector.png</normaloff>../imagens/fornecedor-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_cadastro_transportadora">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Transportadora</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_cadastro_transportadora:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_cadastro_transportadora:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Transportadora</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/transportadora-vector.png</normaloff>../imagens/transportadora-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_cadastro_motorista">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Motorista</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_cadastro_motorista:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_cadastro_motorista:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Motorista</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/motorista-vector.png</normaloff>../imagens/motorista-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_cadastro_veiculo">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Veículo</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_cadastro_veiculo:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_cadastro_veiculo:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Veículo</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/veiculo-vector.png</normaloff>../imagens/veiculo-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_cadastro_usuario">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Usuário</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_cadastro_usuario:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_cadastro_usuario:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Usuário</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/usuario-vector.png</normaloff>../imagens/usuario-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_cadastro_permissao">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Permissão</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_cadastro_permissao:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_cadastro_permissao:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Permissão</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/usuario_cadeado-vector.png</normaloff>../imagens/usuario_cadeado-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QFrame" name="fra_submenu_configuracao">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>61</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QFrame {
+	border: 1px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="vrl_submenu_configuracao">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="btn_configuracao_balanca">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Balança</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_configuracao_balanca:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_configuracao_balanca:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Balança</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/balanca-vector.png</normaloff>../imagens/balanca-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_configuracao_sistema">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Sistema</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_configuracao_sistema:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_configuracao_sistema:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Sistema</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/configuracao-sistema-vector.png</normaloff>../imagens/configuracao-sistema-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QFrame" name="fra_submenu_movimento">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>61</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QFrame {
+	border: 1px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="vrl_submenu_movimento">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="btn_movimento_pesar">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Pesar</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_movimento_pesar:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_movimento_pesar:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Pesar</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/pesar_veiculo-vector.png</normaloff>../imagens/pesar_veiculo-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_movimento_caixa">
+              <property name="maximumSize">
+               <size>
+                <width>212</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::ClickFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>Caixa</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 26px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_movimento_caixa:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_movimento_caixa:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+              </property>
+              <property name="text">
+               <string>      Caixa</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../imagens/moeda-vector.png</normaloff>../imagens/moeda-vector.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QPushButton" name="btn_inicio">
+           <property name="maximumSize">
+            <size>
+             <width>212</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>Cadastro</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	color: white;
+	text-align: left;
+	padding: 0 22px;
+	border-top: 1px solid rgba(250,250,250,.1);
+    border-bottom: 1px solid rgba(250,250,250,.1);
+}
+QPushButton#btn_inicio:hover{
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_inicio:pressed {
+	border: 1px solid rgba(31,31,31,.0);
+	background: rgba(31,31,31,.2);
+}</string>
+           </property>
+           <property name="text">
+            <string>    Início</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imagens/inico-vector.png</normaloff>../imagens/inico-vector.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_close</sender>
+   <signal>clicked()</signal>
+   <receiver>frm_principal</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>824</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>419</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_minimizar</sender>
+   <signal>clicked()</signal>
+   <receiver>frm_principal</receiver>
+   <slot>showMinimized()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>768</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>419</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_maximize</sender>
+   <signal>clicked()</signal>
+   <receiver>frm_principal</receiver>
+   <slot>showMaximized()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>796</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>419</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_maximize_rest</sender>
+   <signal>clicked()</signal>
+   <receiver>frm_principal</receiver>
+   <slot>showNormal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>768</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>419</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_maximize</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>btn_maximize</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>796</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>796</x>
+     <y>11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_maximize_rest</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>btn_maximize_rest</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>768</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>768</x>
+     <y>11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_sobre</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>fra_submenu_sobre</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>105</x>
+     <y>703</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>735</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_relatorio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>fra_submenu_relatorio</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>105</x>
+     <y>487</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>549</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_configuracao</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>fra_submenu_configuracao</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>105</x>
+     <y>610</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>657</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_cadastro</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>fra_submenu_cadastro</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>88</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>89</x>
+     <y>260</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_movimento</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>fra_submenu_movimento</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>88</x>
+     <y>400</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>88</x>
+     <y>459</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_slider</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>vsb_menu</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>19</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>217</x>
+     <y>428</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,2168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frm_registro_transportadora</class>
+ <widget class="QDialog" name="frm_registro_transportadora">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>837</width>
+    <height>469</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>837</width>
+    <height>469</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>11</pointsize>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Cadastro Transportadora</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../imagens/transportadora.png</normaloff>../imagens/transportadora.png</iconset>
+  </property>
+  <property name="whatsThis">
+   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Formulário de cadastro de transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+	background-color: #f6f6f6;
+}</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="grb_botoes">
+     <property name="minimumSize">
+      <size>
+       <width>773</width>
+       <height>51</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>51</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="topMargin">
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btn_primeiro">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Primeiro Registro</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para ir ao primeiro registro&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_primeiro{
+	border-radius: 5px;
+}
+QPushButton#btn_primeiro:hover{
+	border: 1px solid rgba(33,33,33,.2);
+	background: rgba(33,33,33,.1);
+}
+QPushButton#btn_primeiro:pressed {
+	border: 1px solid rgba(33,33,33,.5);
+	background: rgba(33,33,33,.2);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/nextAll.png</normaloff>../imagens/nextAll.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+Alt+Left</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_anterior">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Registro Anterior</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para ir ao registro anterior&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_anterior{
+	border-radius: 5px;
+}
+QPushButton#btn_anterior:hover{
+	border: 1px solid rgba(33,33,33,.2);
+	background: rgba(33,33,33,.1);
+}
+QPushButton#btn_anterior:pressed {
+	border: 1px solid rgba(33,33,33,.5);
+	background: rgba(33,33,33,.2);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/next.png</normaloff>../imagens/next.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+Left</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_proximo">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Próxima Registro</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para ir ao próximo registro&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_proximo{
+	border-radius: 5px;
+}
+QPushButton#btn_proximo:hover{
+	border: 1px solid rgba(33,33,33,.2);
+	background: rgba(33,33,33,.1);
+}
+QPushButton#btn_proximo:pressed {
+	border: 1px solid rgba(33,33,33,.5);
+	background: rgba(33,33,33,.2);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/previous.png</normaloff>../imagens/previous.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+Right</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_ultimo">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Última Registro</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para ir ao ultimo registro&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_ultimo{
+	border-radius: 5px;
+}
+QPushButton#btn_ultimo:hover{
+	border: 1px solid rgba(33,33,33,.2);
+	background: rgba(33,33,33,.1);
+}
+QPushButton#btn_ultimo:pressed {
+	border: 1px solid rgba(33,33,33,.5);
+	background: rgba(33,33,33,.2);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/PreviousAll.png</normaloff>../imagens/PreviousAll.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+Alt+Right</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="separacao_botoes_do_meio_do_navegadores">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_pesquisar_registro">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Pesquisar</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para pesquisar os registros da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_pesquisar_registro{
+	border-radius: 5px;
+}
+QPushButton#btn_pesquisar_registro:hover{
+	border: 1px solid rgba(33,33,33,.2);
+	background: rgba(33,33,33,.1);
+}
+QPushButton#btn_pesquisar_registro:pressed {
+	border: 1px solid rgba(33,33,33,.5);
+	background: rgba(33,33,33,.2);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/edit_find_replace.png</normaloff>../imagens/edit_find_replace.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>F12</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_pesquisar_codigo">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Buscar</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para buscar transportadora pelo codigo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_pesquisar_codigo{
+	border-radius: 5px;
+}
+QPushButton#btn_pesquisar_codigo:hover{
+	border: 1px solid rgba(33,33,33,.2);
+	background: rgba(33,33,33,.1);
+}
+QPushButton#btn_pesquisar_codigo:pressed {
+	border: 1px solid rgba(33,33,33,.5);
+	background: rgba(33,33,33,.2);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/dialog-ok.png</normaloff>../imagens/dialog-ok.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+N</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_imprimir">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Imprimir</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para imprimir registro da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_imprimir{
+	border-radius: 5px;
+}
+QPushButton#btn_imprimir:hover{
+	border: 1px solid rgba(33,33,33,.2);
+	background: rgba(33,33,33,.1);
+}
+QPushButton#btn_imprimir:pressed {
+	border: 1px solid rgba(33,33,33,.5);
+	background: rgba(33,33,33,.2);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/print.png</normaloff>../imagens/print.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+P</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_copiar">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Duplicar</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para duplicar registro&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_copiar{
+	border-radius: 5px;
+}
+QPushButton#btn_copiar:hover{
+	border: 1px solid rgba(33,33,33,.2);
+	background: rgba(33,33,33,.1);
+}
+QPushButton#btn_copiar:pressed {
+	border: 1px solid rgba(33,33,33,.5);
+	background: rgba(33,33,33,.2);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/copy-1.png</normaloff>../imagens/copy-1.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="separacao_botes_meio_do_acoes_registro">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_novo">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Novo</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para cadastrar uma novo registro da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_novo{
+	background-color: #0080ff ;
+	color: #fff;
+	border-radius: 5px;
+}
+QPushButton#btn_novo:hover{
+	background-color:  #0073e6;
+}
+QPushButton#btn_novo:pressed {
+	background-color: #0059b3;
+}
+QPushButton#btn_novo:disabled {
+	background-color:  #a6a6a6;
+	color: #6a6767;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/addNew.png</normaloff>../imagens/addNew.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+N</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_editar">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Editar</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para editar o registro da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_editar{
+	background-color: #0080ff ;
+	color: #fff;
+	border-radius: 5px;
+}
+QPushButton#btn_editar:hover{
+	background-color:  #0073e6;
+}
+QPushButton#btn_editar:pressed {
+	background-color: #0059b3;
+}
+QPushButton#btn_editar:disabled {
+	background-color:  #a6a6a6;
+	color: #6a6767;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/editFile.png</normaloff>../imagens/editFile.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+E</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_salvar">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Salvar</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para salvar o registro da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_salvar{
+	background-color: #0080ff ;
+	color: #fff;
+	border-radius: 5px;
+}
+QPushButton#btn_salvar:hover{
+	background-color:  #0073e6;
+}
+QPushButton#btn_salvar:pressed {
+	background-color: #0059b3;
+}
+QPushButton#btn_salvar:disabled {
+	background-color:  #a6a6a6;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/save-file.png</normaloff>../imagens/save-file.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+S</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_cancelar">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Cancelar</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para cancelar a operação&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_cancelar{
+	background-color: #0080ff ;
+	color: #fff;
+	border-radius: 5px;
+}
+QPushButton#btn_cancelar:hover{
+	background-color:  #0073e6;
+}
+QPushButton#btn_cancelar:pressed {
+	background-color: #0059b3;
+}
+QPushButton#btn_cancelar:disabled {
+	background-color:  #a6a6a6;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/cancelfile.png</normaloff>../imagens/cancelfile.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+F</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_deletar">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Deletar</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão de deletar o registro da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btn_deletar{
+	background-color: #0080ff ;
+	color: #fff;
+	border-radius: 5px;
+}
+QPushButton#btn_deletar:hover{
+	background-color:  #0073e6;
+}
+QPushButton#btn_deletar:pressed {
+	background-color: #0059b3;
+}
+QPushButton#btn_deletar:disabled {
+	background-color:  #a6a6a6;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../imagens/delet.png</normaloff>../imagens/delet.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+D</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="grb_compos_dados">
+     <property name="minimumSize">
+      <size>
+       <width>773</width>
+       <height>361</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #474747;
+</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbl_codigo">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Codigo</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="lbl_tipo_pessoa">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Tipo Pessoa</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLineEdit" name="txt_codigo">
+        <property name="minimumSize">
+         <size>
+          <width>131</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Codigo</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do codigo do registro da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#txt_codigo{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_codigo:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_codigo:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QComboBox" name="cb_tipo_pessoa">
+        <property name="minimumSize">
+         <size>
+          <width>171</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Tipo Pessoa</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo de seleção do tipo da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox#cb_tipo_pessoa {
+	background-color: #eeeeee;
+	color: #6a6767;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QComboBox#cb_tipo_pessoa:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QComboBox#cb_tipo_pessoae:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}
+QHeaderView::section QComboBox {
+    background-color: #585A5C;
+    color: #F0F0F0;
+}
+
+QComboBox::drop-down {
+    border: 0;
+	subcontrol-position: right center;
+    subcontrol-origin: margin;
+}
+
+QComboBox::down-arrow {
+	subcontrol-position: right center;
+    subcontrol-origin: margin;
+	margin-right: 3px;
+    background-image: url(C:/Users/Cauneto/Documents/RPA/image/dropdown.png);
+	background-position: center;
+	background-repeat: no-repeat;
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lbl_nome_razao_social">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Nome / Razão Social</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3" colspan="2">
+       <widget class="QLabel" name="lbl_sobrenome_fantasia">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Sobenome / Fantasia</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="3">
+       <widget class="QLineEdit" name="txt_nome_razao_social">
+        <property name="minimumSize">
+         <size>
+          <width>321</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Nome / Razão Social</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do nome ou razao social da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#txt_nome_razao_social{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_nome_razao_social:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_nome_razao_social:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="maxLength">
+         <number>75</number>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3" colspan="3">
+       <widget class="QLineEdit" name="txt_nome_fantasia">
+        <property name="minimumSize">
+         <size>
+          <width>391</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Sobrenome / Fantasia</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do sobrenome ou nome fantasia da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#txt_nome_fantasia{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_nome_fantasia:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_nome_fantasia:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="maxLength">
+         <number>75</number>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="lbl_cnpj">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>CPF / CNPJ</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="lbl_inscricao_estadual">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Expeditor</string>
+        </property>
+        <property name="text">
+         <string>RG / Ins. Estadual</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLabel" name="lbl_inscricao_municipal">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Ins. Municipal</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="4">
+       <widget class="QLabel" name="lbl_telefone">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Expeditor</string>
+        </property>
+        <property name="text">
+         <string>Telefone</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="5">
+       <widget class="QLabel" name="lbl_celular">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Expeditor</string>
+        </property>
+        <property name="text">
+         <string>Celular</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLineEdit" name="txt_cpf_cnpj">
+        <property name="minimumSize">
+         <size>
+          <width>161</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>CPF</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do número do CPF ou CNPJ da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#txt_cpf_cnpj{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_cpf_cnpj:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_cpf_cnpj:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="maxLength">
+         <number>15</number>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="txt_inscricao_estadual">
+        <property name="minimumSize">
+         <size>
+          <width>131</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>RG / Ins. Municipal</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do número do RG ou Inscrição Estadual da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#txt_inscricao_estadual{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_inscricao_estadual:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_inscricao_estadual:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="maxLength">
+         <number>15</number>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2" colspan="2">
+       <widget class="QLineEdit" name="txt_inscricao_municipal">
+        <property name="minimumSize">
+         <size>
+          <width>131</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>131</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Ins. Municipal</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do número da Inscrição Municipal da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#txt_inscricao_municipal{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_inscricao_municipal:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_inscricao_municipal:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="maxLength">
+         <number>15</number>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="4">
+       <widget class="QLineEdit" name="txt_telefone">
+        <property name="minimumSize">
+         <size>
+          <width>131</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Telefone</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do número de telefone da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#txt_telefone{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_telefone:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_telefone:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="maxLength">
+         <number>15</number>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="5">
+       <widget class="QLineEdit" name="txt_celular">
+        <property name="minimumSize">
+         <size>
+          <width>131</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Celular</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do número de celular da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#txt_celular{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_celular:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_celular:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="maxLength">
+         <number>15</number>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="lbl_email">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>E-mail</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0" colspan="3">
+       <widget class="QLineEdit" name="txt_email">
+        <property name="minimumSize">
+         <size>
+          <width>368</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>E-mail</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do endereço de e-mail da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#txt_email{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_email:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_email:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+        </property>
+        <property name="maxLength">
+         <number>255</number>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0" colspan="6">
+       <widget class="QTabWidget" name="tab_informcoes">
+        <property name="minimumSize">
+         <size>
+          <width>779</width>
+          <height>171</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTabWidget{
+	background-color: #f6f6f6;
+}
+QTabBar{
+	background-color:  #eeeeee;
+	border: none;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+QTabBar::tab {
+    padding: 8 64 5 20;
+    color:  gray;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-left: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+}
+QTabBar::tab:hover {
+     background: #dcdcdc;
+}
+QTabBar::tab:selected {
+    background:  gray;
+    color: white;
+}</string>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab_endereco">
+         <attribute name="title">
+          <string>Endereço</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_cep">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>CEP</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="lbl_cidade">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Cidade</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="lbl_estado">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Estado</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLineEdit" name="txt_cep">
+            <property name="minimumSize">
+             <size>
+              <width>131</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>CEP</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do número do CEP do endereço onde fica sediada a transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit#txt_cep{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_cep:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_cep:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+            </property>
+            <property name="maxLength">
+             <number>9</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" colspan="2">
+           <widget class="QLineEdit" name="txt_cidade">
+            <property name="minimumSize">
+             <size>
+              <width>371</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Cidade</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do nome da cidade onde fica sediada a transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit#txt_cidade{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_cidade:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_cidade:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+            </property>
+            <property name="maxLength">
+             <number>100</number>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLineEdit" name="txt_estado">
+            <property name="minimumSize">
+             <size>
+              <width>201</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Estado</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do nome do estado onde fica sediada a transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit#txt_estado{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_estado:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_estado:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+            </property>
+            <property name="maxLength">
+             <number>50</number>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_endereco">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Endereço</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="lbl_complemento">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Complemento</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QLineEdit" name="txt_endereco">
+            <property name="minimumSize">
+             <size>
+              <width>381</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Endereço</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do endereço da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit#txt_endereco{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_endereco:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#ttxt_endereco:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+            </property>
+            <property name="maxLength">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2" colspan="2">
+           <widget class="QLineEdit" name="txt_complemento">
+            <property name="minimumSize">
+             <size>
+              <width>331</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Complemento</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do complemento do endereço da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit#txt_complemento{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_complemento:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_complemento:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+            </property>
+            <property name="maxLength">
+             <number>80</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="lbl_bairro">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Bairro</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <widget class="QLineEdit" name="txt_bairro">
+            <property name="minimumSize">
+             <size>
+              <width>381</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Bairro</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do nome do bairro do endereço da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit#txt_bairro{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_bairro:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_bairro:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+            </property>
+            <property name="maxLength">
+             <number>70</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_geral">
+         <attribute name="title">
+          <string>Geral</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="2">
+           <widget class="QLabel" name="lbl_data_modificacao">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Data Mododificação</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_situacao">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Situação</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="lbl_usuario_que_criou">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Usuário que Criou</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QComboBox" name="cb_situacao">
+            <property name="minimumSize">
+             <size>
+              <width>171</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Situação</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo de seleção da situação cadastral da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QComboBox#cb_situacao {
+	background-color: #eeeeee;
+	color: #6a6767;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QComboBox#cb_situacao:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QComboBox#cb_situacao:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}
+QHeaderView::section QComboBox {
+    background-color: #585A5C;
+    color: #F0F0F0;
+}
+
+QComboBox::drop-down {
+    border: 0;
+subcontrol-position: right center;
+    subcontrol-origin: margin;
+}
+
+QComboBox::down-arrow {
+	subcontrol-position: right center;
+    subcontrol-origin: margin;
+	margin-right: 3px;
+    background-image: url(C:/Users/Cauneto/Documents/RPA/image/dropdown.png);
+	background-position: center;
+	background-repeat: no-repeat;
+}</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="txt_data_registro">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>111</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Data Cadastro</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo da data de criação do registro da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit#txt_data_registro{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_data_registro:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_data_registro:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+            </property>
+            <property name="maxLength">
+             <number>10</number>
+            </property>
+            <property name="placeholderText">
+             <string>dia / mês / ano</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLineEdit" name="txt_usuario_criou">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>131</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Usuário que Criou</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo usuário que criou o registro&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit#txt_usuario_criou{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_usuario_criou:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_usuario_criou:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="lbl_data_cadastro">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Data Cadastro</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLineEdit" name="txt_data_modificacao">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>121</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Data Modificação</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo da data de modificação do registro da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit#txt_data_modificacao{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QLineEdit#txt_data_modificacao:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QLineEdit#txt_data_modificacao:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+            </property>
+            <property name="maxLength">
+             <number>10</number>
+            </property>
+            <property name="placeholderText">
+             <string>dia / mês / ano</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_observacao">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Observação</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <spacer name="separacao_usuario_borda">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="0" colspan="5">
+           <widget class="QTextEdit" name="txt_observcao">
+            <property name="minimumSize">
+             <size>
+              <width>775</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Observação</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo de observações da transportadora&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTextEdit#txt_observcao{
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+QTextEdit#txt_observcao:focus{
+	border: 2px solid rgba(81, 203, 238, 1);
+}
+QTextEdit#txt_observcao:disabled {
+	background-color:  #dcdcdc;
+	color: #6a6767;
+	border: 1px solid gray;
+}</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>txt_codigo</tabstop>
+  <tabstop>cb_tipo_pessoa</tabstop>
+  <tabstop>txt_nome_razao_social</tabstop>
+  <tabstop>txt_nome_fantasia</tabstop>
+  <tabstop>txt_cpf_cnpj</tabstop>
+  <tabstop>txt_inscricao_estadual</tabstop>
+  <tabstop>txt_inscricao_municipal</tabstop>
+  <tabstop>txt_telefone</tabstop>
+  <tabstop>txt_celular</tabstop>
+  <tabstop>txt_email</tabstop>
+  <tabstop>txt_cep</tabstop>
+  <tabstop>txt_cidade</tabstop>
+  <tabstop>txt_estado</tabstop>
+  <tabstop>txt_endereco</tabstop>
+  <tabstop>txt_complemento</tabstop>
+  <tabstop>txt_bairro</tabstop>
+  <tabstop>cb_situacao</tabstop>
+  <tabstop>txt_data_registro</tabstop>
+  <tabstop>txt_data_modificacao</tabstop>
+  <tabstop>txt_usuario_criou</tabstop>
+  <tabstop>txt_observcao</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
