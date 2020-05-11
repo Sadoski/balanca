@@ -12,7 +12,7 @@ class Conexao:
         """
         try:
 
-            self.engine = create_engine('sqlite+pysqlcipher://:balanca@/balanca.db?cipher=aes-256-cbc&kdf_iter=64000')
+            self.engine = create_engine('sqlite+pysqlcipher://:balanca}@/balanca.db}?cipher=aes-256-cbc&kdf_iter=64000')
 
         except (exc.DBAPIError, exc.InterfaceError, exc.DatabaseError, exc.DataError, exc.OperationalError,
                 exc.IntegrityError, exc.InternalError, exc.ProgrammingError, exc.NotSupportedError) as err:

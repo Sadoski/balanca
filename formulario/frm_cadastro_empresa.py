@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
     QRect, QSize, QUrl, Qt)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
@@ -7,28 +8,42 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
 from PySide2.QtWidgets import *
 
 
-class Ui_frm_registro_empresa(object):
-    def setupUi(self, frm_registro_empresa):
+class FrmRegistroEmpresa(object):
+
+    def set_frm_registro_empresa(self, frm_registro_empresa):
         if frm_registro_empresa.objectName():
             frm_registro_empresa.setObjectName(u"frm_registro_empresa")
         frm_registro_empresa.resize(590, 555)
-        frm_registro_empresa.setMinimumSize(QSize(590, 555))
+        #frm_registro_empresa.setMinimumSize(QSize(590, 555))
         font = QFont()
         font.setPointSize(11)
         font.setBold(False)
         font.setWeight(50)
         frm_registro_empresa.setFont(font)
         icon = QIcon()
-        icon.addFile(u"../imagens/empresa.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"./imagens/empresa.png", QSize(), QIcon.Normal, QIcon.Off)
         frm_registro_empresa.setWindowIcon(icon)
         frm_registro_empresa.setStyleSheet(u"QDialog{\n"
                                            "	background-color: white;\n"
                                            "}")
 
         self.grl_registro_empresa = QGridLayout(frm_registro_empresa)
+        self.grl_registro_empresa.setSpacing(0)
         self.grl_registro_empresa.setObjectName(u"grl_registro_empresa")
+        self.grl_registro_empresa.setSizeConstraint(QLayout.SetMinimumSize)
+        self.grl_registro_empresa.setContentsMargins(0, 0, 0, 0)
 
-        self.grb_botoes = QGroupBox(frm_registro_empresa)
+        self.fra_main_registro_empresa = QFrame(frm_registro_empresa)
+        self.fra_main_registro_empresa.setObjectName(u"fra_main_registro_empresa")
+        self.fra_main_registro_empresa.setMinimumSize(QSize(590, 555))
+        #self.fra_main_registro_empresa.setMaximumSize(QSize(10000, 10000))
+        #self.fra_main_registro_empresa.setFrameShape(QFrame.StyledPanel)
+        #self.fra_main_registro_empresa.setFrameShadow(QFrame.Raised)
+
+        self.vrl_main_registro_empresa = QVBoxLayout(self.fra_main_registro_empresa)
+        self.vrl_main_registro_empresa.setObjectName(u"vrl_main_registro_empresa")
+
+        self.grb_botoes = QGroupBox(self.fra_main_registro_empresa)
         self.grb_botoes.setObjectName(u"grb_botoes")
         self.grb_botoes.setMaximumSize(QSize(16777215, 51))
         font1 = QFont()
@@ -390,15 +405,15 @@ class Ui_frm_registro_empresa(object):
 
         self.hzl_botoes.addWidget(self.btn_deletar)
 
-        self.grl_registro_empresa.addWidget(self.grb_botoes, 0, 0, 1, 1)
+        self.vrl_main_registro_empresa.addWidget(self.grb_botoes)
 
-        self.grb_compos_dados = QGroupBox(frm_registro_empresa)
+        self.grb_compos_dados = QGroupBox(self.fra_main_registro_empresa)
         self.grb_compos_dados.setObjectName(u"grb_compos_dados")
         self.grb_compos_dados.setFont(font1)
         self.grb_compos_dados.setStyleSheet(u"color: #474747;\n")
 
-        self.grl_compos_dados = QGridLayout(self.grb_compos_dados)
-        self.grl_compos_dados.setObjectName(u"grl_compos_dados")
+        self.grl_campo_dados = QGridLayout(self.grb_compos_dados)
+        self.grl_campo_dados.setObjectName(u"grl_campo_dados")
 
         self.lbl_codigo = QLabel(self.grb_compos_dados)
         self.lbl_codigo.setObjectName(u"lbl_codigo")
@@ -406,19 +421,19 @@ class Ui_frm_registro_empresa(object):
         font2.setPointSize(10)
         self.lbl_codigo.setFont(font2)
 
-        self.grl_compos_dados.addWidget(self.lbl_codigo, 0, 0, 1, 1)
+        self.grl_campo_dados.addWidget(self.lbl_codigo, 0, 0, 1, 1)
 
         self.lbl_tipo_pessoa = QLabel(self.grb_compos_dados)
         self.lbl_tipo_pessoa.setObjectName(u"lbl_tipo_pessoa")
         self.lbl_tipo_pessoa.setFont(font2)
 
-        self.grl_compos_dados.addWidget(self.lbl_tipo_pessoa, 0, 1, 1, 1)
+        self.grl_campo_dados.addWidget(self.lbl_tipo_pessoa, 0, 1, 1, 1)
 
         self.lbl_tipo_empresa = QLabel(self.grb_compos_dados)
         self.lbl_tipo_empresa.setObjectName(u"lbl_tipo_empresa")
         self.lbl_tipo_empresa.setFont(font2)
 
-        self.grl_compos_dados.addWidget(self.lbl_tipo_empresa, 0, 2, 1, 1)
+        self.grl_campo_dados.addWidget(self.lbl_tipo_empresa, 0, 2, 1, 1)
 
         self.txt_codigo = QLineEdit(self.grb_compos_dados)
         self.txt_codigo.setObjectName(u"txt_codigo")
@@ -440,7 +455,7 @@ class Ui_frm_registro_empresa(object):
                                       "}")
         self.txt_codigo.setReadOnly(False)
 
-        self.grl_compos_dados.addWidget(self.txt_codigo, 1, 0, 1, 1)
+        self.grl_campo_dados.addWidget(self.txt_codigo, 1, 0, 1, 1)
 
         self.cb_tipo_pessoa = QComboBox(self.grb_compos_dados)
         self.cb_tipo_pessoa.setObjectName(u"cb_tipo_pessoa")
@@ -465,13 +480,11 @@ class Ui_frm_registro_empresa(object):
                                           "    background-color: #585A5C;\n"
                                           "    color: #F0F0F0;\n"
                                           "}\n"
-                                          "\n"
                                           "QComboBox::drop-down {\n"
                                           "    border: 0;\n"
                                           "	subcontrol-position: right center;\n"
                                           "    subcontrol-origin: margin;\n"
                                           "}\n"
-                                          "\n"
                                           "QComboBox::down-arrow {\n"
                                           "	subcontrol-position: right center;\n"
                                           "    subcontrol-origin: margin;\n"
@@ -481,7 +494,7 @@ class Ui_frm_registro_empresa(object):
                                           "	background-repeat: no-repeat;\n"
                                           "}")
 
-        self.grl_compos_dados.addWidget(self.cb_tipo_pessoa, 1, 1, 1, 1)
+        self.grl_campo_dados.addWidget(self.cb_tipo_pessoa, 1, 1, 1, 1)
 
         self.cb_tipo_empresa = QComboBox(self.grb_compos_dados)
         self.cb_tipo_empresa.setObjectName(u"cb_tipo_empresa")
@@ -520,20 +533,20 @@ class Ui_frm_registro_empresa(object):
                                            "	background-repeat: no-repeat;\n"
                                            "}")
 
-        self.grl_compos_dados.addWidget(self.cb_tipo_empresa, 1, 2, 1, 1)
+        self.grl_campo_dados.addWidget(self.cb_tipo_empresa, 1, 2, 1, 1)
 
-        self.frame_logo = QFrame(self.grb_compos_dados)
-        self.frame_logo.setObjectName(u"frame_logo")
-        self.frame_logo.setMinimumSize(QSize(101, 131))
-        self.frame_logo.setMaximumSize(QSize(101, 131))
-        self.frame_logo.setStyleSheet(u"QFrame#frame_logo{\n"
+        self.fra_logo = QFrame(self.grb_compos_dados)
+        self.fra_logo.setObjectName(u"fra_logo")
+        self.fra_logo.setMinimumSize(QSize(101, 131))
+        self.fra_logo.setMaximumSize(QSize(101, 131))
+        self.fra_logo.setStyleSheet(u"QFrame#fra_logo{\n"
                                       "	background: white;\n"
                                       "	border: 1px solid gray;\n"
                                       "}")
-        self.frame_logo.setFrameShape(QFrame.StyledPanel)
-        self.frame_logo.setFrameShadow(QFrame.Raised)
+        self.fra_logo.setFrameShape(QFrame.StyledPanel)
+        self.fra_logo.setFrameShadow(QFrame.Raised)
 
-        self.btn_buscar_arquivo_imagem_logo = QPushButton(self.frame_logo)
+        self.btn_buscar_arquivo_imagem_logo = QPushButton(self.fra_logo)
         self.btn_buscar_arquivo_imagem_logo.setObjectName(u"btn_buscar_arquivo_imagem_logo")
         self.btn_buscar_arquivo_imagem_logo.setGeometry(QRect(10, 99, 31, 25))
         self.btn_buscar_arquivo_imagem_logo.setMinimumSize(QSize(31, 25))
@@ -558,7 +571,7 @@ class Ui_frm_registro_empresa(object):
         icon14.addFile(u"./imagens/pasta_imagem.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_buscar_arquivo_imagem_logo.setIcon(icon14)
 
-        self.lbl_logo = QLabel(self.frame_logo)
+        self.lbl_logo = QLabel(self.fra_logo)
         self.lbl_logo.setObjectName(u"lbl_logo")
         self.lbl_logo.setGeometry(QRect(10, 16, 80, 80))
         self.lbl_logo.setMinimumSize(QSize(80, 80))
@@ -567,12 +580,11 @@ class Ui_frm_registro_empresa(object):
                                     "	background: #eeeeee;\n"
                                     "	border: 1px solid gray;\n"
                                     "}")
-        self.lbl_logo.setPixmap(QPixmap(u"./images/guavira.png"))
         self.lbl_logo.setScaledContents(True)
         self.lbl_logo.setAlignment(Qt.AlignCenter)
         self.lbl_logo.setMargin(5)
 
-        self.btn_deletar_imagem_logo = QPushButton(self.frame_logo)
+        self.btn_deletar_imagem_logo = QPushButton(self.fra_logo)
         self.btn_deletar_imagem_logo.setObjectName(u"btn_deletar_imagem_logo")
         self.btn_deletar_imagem_logo.setGeometry(QRect(60, 99, 31, 25))
         self.btn_deletar_imagem_logo.setMinimumSize(QSize(31, 25))
@@ -594,20 +606,19 @@ class Ui_frm_registro_empresa(object):
                                                    "	color: #6a6767;\n"
                                                    "}")
         self.btn_deletar_imagem_logo.setIcon(icon12)
-
-        self.lbl_logotipo = QLabel(self.frame_logo)
+        self.lbl_logotipo = QLabel(self.fra_logo)
         self.lbl_logotipo.setObjectName(u"lbl_logotipo")
         self.lbl_logotipo.setGeometry(QRect(30, 0, 47, 13))
         self.lbl_logotipo.setMinimumSize(QSize(47, 13))
         self.lbl_logotipo.setMaximumSize(QSize(47, 13))
 
-        self.grl_compos_dados.addWidget(self.frame_logo, 1, 4, 7, 1)
+        self.grl_campo_dados.addWidget(self.fra_logo, 1, 4, 7, 1)
 
         self.lbl_nome_razao_social = QLabel(self.grb_compos_dados)
         self.lbl_nome_razao_social.setObjectName(u"lbl_nome_razao_social")
         self.lbl_nome_razao_social.setFont(font2)
 
-        self.grl_compos_dados.addWidget(self.lbl_nome_razao_social, 2, 0, 1, 1)
+        self.grl_campo_dados.addWidget(self.lbl_nome_razao_social, 2, 0, 1, 1)
 
         self.txt_nome_razao_social = QLineEdit(self.grb_compos_dados)
         self.txt_nome_razao_social.setObjectName(u"txt_nome_razao_social")
@@ -628,17 +639,17 @@ class Ui_frm_registro_empresa(object):
                                                  "}")
         self.txt_nome_razao_social.setMaxLength(75)
 
-        self.grl_compos_dados.addWidget(self.txt_nome_razao_social, 3, 0, 1, 3)
+        self.grl_campo_dados.addWidget(self.txt_nome_razao_social, 3, 0, 1, 3)
 
         self.separacao_logo_campos = QSpacerItem(5, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
-        self.grl_compos_dados.addItem(self.separacao_logo_campos, 3, 3, 1, 1)
+        self.grl_campo_dados.addItem(self.separacao_logo_campos, 3, 3, 1, 1)
 
         self.lbl_sobrenome_fantasia = QLabel(self.grb_compos_dados)
         self.lbl_sobrenome_fantasia.setObjectName(u"lbl_sobrenome_fantasia")
         self.lbl_sobrenome_fantasia.setFont(font2)
 
-        self.grl_compos_dados.addWidget(self.lbl_sobrenome_fantasia, 4, 0, 1, 1)
+        self.grl_campo_dados.addWidget(self.lbl_sobrenome_fantasia, 4, 0, 1, 1)
 
         self.txt_nome_fantasia = QLineEdit(self.grb_compos_dados)
         self.txt_nome_fantasia.setObjectName(u"txt_nome_fantasia")
@@ -659,25 +670,25 @@ class Ui_frm_registro_empresa(object):
                                              "}")
         self.txt_nome_fantasia.setMaxLength(75)
 
-        self.grl_compos_dados.addWidget(self.txt_nome_fantasia, 5, 0, 1, 3)
+        self.grl_campo_dados.addWidget(self.txt_nome_fantasia, 5, 0, 1, 3)
 
         self.lbl_cnpj = QLabel(self.grb_compos_dados)
         self.lbl_cnpj.setObjectName(u"lbl_cnpj")
         self.lbl_cnpj.setFont(font2)
 
-        self.grl_compos_dados.addWidget(self.lbl_cnpj, 6, 0, 1, 1)
+        self.grl_campo_dados.addWidget(self.lbl_cnpj, 6, 0, 1, 1)
 
         self.lbl_inscricao_estadual = QLabel(self.grb_compos_dados)
         self.lbl_inscricao_estadual.setObjectName(u"lbl_inscricao_estadual")
         self.lbl_inscricao_estadual.setFont(font2)
 
-        self.grl_compos_dados.addWidget(self.lbl_inscricao_estadual, 6, 1, 1, 1)
+        self.grl_campo_dados.addWidget(self.lbl_inscricao_estadual, 6, 1, 1, 1)
 
         self.lbl_inscricao_municipal = QLabel(self.grb_compos_dados)
         self.lbl_inscricao_municipal.setObjectName(u"lbl_inscricao_municipal")
         self.lbl_inscricao_municipal.setFont(font2)
 
-        self.grl_compos_dados.addWidget(self.lbl_inscricao_municipal, 6, 2, 1, 1)
+        self.grl_campo_dados.addWidget(self.lbl_inscricao_municipal, 6, 2, 1, 1)
 
         self.txt_cpf_cnpj = QLineEdit(self.grb_compos_dados)
         self.txt_cpf_cnpj.setObjectName(u"txt_cpf_cnpj")
@@ -699,7 +710,7 @@ class Ui_frm_registro_empresa(object):
                                         "}")
         self.txt_cpf_cnpj.setMaxLength(18)
 
-        self.grl_compos_dados.addWidget(self.txt_cpf_cnpj, 7, 0, 1, 1)
+        self.grl_campo_dados.addWidget(self.txt_cpf_cnpj, 7, 0, 1, 1)
 
         self.txt_inscricao_estadual = QLineEdit(self.grb_compos_dados)
         self.txt_inscricao_estadual.setObjectName(u"txt_inscricao_estadual")
@@ -721,7 +732,7 @@ class Ui_frm_registro_empresa(object):
                                                   "}")
         self.txt_inscricao_estadual.setMaxLength(15)
 
-        self.grl_compos_dados.addWidget(self.txt_inscricao_estadual, 7, 1, 1, 1)
+        self.grl_campo_dados.addWidget(self.txt_inscricao_estadual, 7, 1, 1, 1)
 
         self.txt_inscricao_municipal = QLineEdit(self.grb_compos_dados)
         self.txt_inscricao_municipal.setObjectName(u"txt_inscricao_municipal")
@@ -743,19 +754,19 @@ class Ui_frm_registro_empresa(object):
                                                    "}")
         self.txt_inscricao_municipal.setMaxLength(15)
 
-        self.grl_compos_dados.addWidget(self.txt_inscricao_municipal, 7, 2, 1, 1)
+        self.grl_campo_dados.addWidget(self.txt_inscricao_municipal, 7, 2, 1, 1)
 
         self.lbl_telefone = QLabel(self.grb_compos_dados)
         self.lbl_telefone.setObjectName(u"lbl_telefone")
         self.lbl_telefone.setFont(font2)
 
-        self.grl_compos_dados.addWidget(self.lbl_telefone, 8, 0, 1, 1)
+        self.grl_campo_dados.addWidget(self.lbl_telefone, 8, 0, 1, 1)
 
         self.lbl_celular = QLabel(self.grb_compos_dados)
         self.lbl_celular.setObjectName(u"lbl_celular")
         self.lbl_celular.setFont(font2)
 
-        self.grl_compos_dados.addWidget(self.lbl_celular, 8, 1, 1, 1)
+        self.grl_campo_dados.addWidget(self.lbl_celular, 8, 1, 1, 1)
 
         self.txt_telefone = QLineEdit(self.grb_compos_dados)
         self.txt_telefone.setObjectName(u"txt_telefone")
@@ -777,7 +788,7 @@ class Ui_frm_registro_empresa(object):
                                         "}")
         self.txt_telefone.setMaxLength(16)
 
-        self.grl_compos_dados.addWidget(self.txt_telefone, 9, 0, 1, 1)
+        self.grl_campo_dados.addWidget(self.txt_telefone, 9, 0, 1, 1)
 
         self.txt_celular = QLineEdit(self.grb_compos_dados)
         self.txt_celular.setObjectName(u"txt_celular")
@@ -799,13 +810,13 @@ class Ui_frm_registro_empresa(object):
                                        "}")
         self.txt_celular.setMaxLength(16)
 
-        self.grl_compos_dados.addWidget(self.txt_celular, 9, 1, 1, 1)
+        self.grl_campo_dados.addWidget(self.txt_celular, 9, 1, 1, 1)
 
         self.lbl_email = QLabel(self.grb_compos_dados)
         self.lbl_email.setObjectName(u"lbl_email")
         self.lbl_email.setFont(font2)
 
-        self.grl_compos_dados.addWidget(self.lbl_email, 10, 0, 1, 1)
+        self.grl_campo_dados.addWidget(self.lbl_email, 10, 0, 1, 1)
 
         self.txt_email = QLineEdit(self.grb_compos_dados)
         self.txt_email.setObjectName(u"txt_email")
@@ -826,7 +837,7 @@ class Ui_frm_registro_empresa(object):
                                      "}")
         self.txt_email.setMaxLength(255)
 
-        self.grl_compos_dados.addWidget(self.txt_email, 11, 0, 1, 3)
+        self.grl_campo_dados.addWidget(self.txt_email, 11, 0, 1, 3)
 
         self.tab_informcoes = QTabWidget(self.grb_compos_dados)
         self.tab_informcoes.setObjectName(u"tab_informcoes")
@@ -863,45 +874,18 @@ class Ui_frm_registro_empresa(object):
 
         self.grl_tab_endereco = QGridLayout(self.tab_endereco)
         self.grl_tab_endereco.setObjectName(u"grl_tab_endereco")
-        self.lbl_cep = QLabel(self.tab_endereco)
-        self.lbl_cep.setObjectName(u"lbl_cep")
-        self.lbl_cep.setFont(font2)
 
-        self.grl_tab_endereco.addWidget(self.lbl_cep, 0, 0, 1, 1)
+        self.lbl_endereco = QLabel(self.tab_endereco)
+        self.lbl_endereco.setObjectName(u"lbl_endereco")
+        self.lbl_endereco.setFont(font2)
 
-        self.lbl_cidade = QLabel(self.tab_endereco)
-        self.lbl_cidade.setObjectName(u"lbl_cidade")
-        self.lbl_cidade.setFont(font2)
+        self.grl_tab_endereco.addWidget(self.lbl_endereco, 2, 0, 1, 1)
 
-        self.grl_tab_endereco.addWidget(self.lbl_cidade, 0, 1, 1, 2)
+        self.lbl_complemento = QLabel(self.tab_endereco)
+        self.lbl_complemento.setObjectName(u"lbl_complemento")
+        self.lbl_complemento.setFont(font2)
 
-        self.lbl_estado = QLabel(self.tab_endereco)
-        self.lbl_estado.setObjectName(u"lbl_estado")
-        self.lbl_estado.setFont(font2)
-
-        self.grl_tab_endereco.addWidget(self.lbl_estado, 0, 3, 1, 1)
-
-        self.txt_cep = QLineEdit(self.tab_endereco)
-        self.txt_cep.setObjectName(u"txt_cep")
-        self.txt_cep.setMinimumSize(QSize(100, 20))
-        self.txt_cep.setMaximumSize(QSize(181, 16777215))
-        self.txt_cep.setFont(font2)
-        self.txt_cep.setStyleSheet(u"QLineEdit#txt_cep{\n"
-                                   "	background-color: #fff;\n"
-                                   "	border: 1px solid gray;\n"
-                                   "	border-radius: 5px;\n"
-                                   "}\n"
-                                   "QLineEdit#txt_cep:focus{\n"
-                                   "	border: 2px solid rgba(81, 203, 238, 1);\n"
-                                   "}\n"
-                                   "QLineEdit#txt_cep:disabled {\n"
-                                   "	background-color:  #dcdcdc;\n"
-                                   "	color: #6a6767;\n"
-                                   "	border: 1px solid gray;\n"
-                                   "}")
-        self.txt_cep.setMaxLength(9)
-
-        self.grl_tab_endereco.addWidget(self.txt_cep, 1, 0, 1, 1)
+        self.grl_tab_endereco.addWidget(self.lbl_complemento, 2, 2, 1, 1)
 
         self.txt_cidade = QLineEdit(self.tab_endereco)
         self.txt_cidade.setObjectName(u"txt_cidade")
@@ -924,6 +908,87 @@ class Ui_frm_registro_empresa(object):
         self.txt_cidade.setReadOnly(True)
 
         self.grl_tab_endereco.addWidget(self.txt_cidade, 1, 1, 1, 2)
+
+        self.txt_endereco = QLineEdit(self.tab_endereco)
+        self.txt_endereco.setObjectName(u"txt_endereco")
+        self.txt_endereco.setMinimumSize(QSize(251, 20))
+        self.txt_endereco.setFont(font2)
+        self.txt_endereco.setStyleSheet(u"QLineEdit#txt_endereco{\n"
+                                        "	background-color: #fff;\n"
+                                        "	border: 1px solid gray;\n"
+                                        "	border-radius: 5px;\n"
+                                        "}\n"
+                                        "QLineEdit#txt_endereco:focus{\n"
+                                        "	border: 2px solid rgba(81, 203, 238, 1);\n"
+                                        "}\n"
+                                        "QLineEdit#ttxt_endereco:disabled {\n"
+                                        "	background-color:  #dcdcdc;\n"
+                                        "	color: #6a6767;\n"
+                                        "	border: 1px solid gray;\n"
+                                        "}")
+        self.txt_endereco.setMaxLength(100)
+
+        self.grl_tab_endereco.addWidget(self.txt_endereco, 3, 0, 1, 2)
+
+        self.lbl_estado = QLabel(self.tab_endereco)
+        self.lbl_estado.setObjectName(u"lbl_estado")
+        self.lbl_estado.setFont(font2)
+
+        self.grl_tab_endereco.addWidget(self.lbl_estado, 0, 3, 1, 1)
+
+        self.txt_complemento = QLineEdit(self.tab_endereco)
+        self.txt_complemento.setObjectName(u"txt_complemento")
+        self.txt_complemento.setMinimumSize(QSize(251, 20))
+        self.txt_complemento.setFont(font2)
+        self.txt_complemento.setStyleSheet(u"QLineEdit#txt_complemento{\n"
+                                           "	background-color: #fff;\n"
+                                           "	border: 1px solid gray;\n"
+                                           "	border-radius: 5px;\n"
+                                           "}\n"
+                                           "QLineEdit#txt_complemento:focus{\n"
+                                           "	border: 2px solid rgba(81, 203, 238, 1);\n"
+                                           "}\n"
+                                           "QLineEdit#txt_complemento:disabled {\n"
+                                           "	background-color:  #dcdcdc;\n"
+                                           "	color: #6a6767;\n"
+                                           "	border: 1px solid gray;\n"
+                                           "}")
+        self.txt_complemento.setMaxLength(80)
+
+        self.grl_tab_endereco.addWidget(self.txt_complemento, 3, 2, 1, 2)
+
+        self.txt_bairro = QLineEdit(self.tab_endereco)
+        self.txt_bairro.setObjectName(u"txt_bairro")
+        self.txt_bairro.setMinimumSize(QSize(251, 20))
+        self.txt_bairro.setFont(font2)
+        self.txt_bairro.setStyleSheet(u"QLineEdit#txt_bairro{\n"
+                                      "	background-color: #fff;\n"
+                                      "	border: 1px solid gray;\n"
+                                      "	border-radius: 5px;\n"
+                                      "}\n"
+                                      "QLineEdit#txt_bairro:focus{\n"
+                                      "	border: 2px solid rgba(81, 203, 238, 1);\n"
+                                      "}\n"
+                                      "QLineEdit#txt_bairro:disabled {\n"
+                                      "	background-color:  #dcdcdc;\n"
+                                      "	color: #6a6767;\n"
+                                      "	border: 1px solid gray;\n"
+                                      "}")
+        self.txt_bairro.setMaxLength(70)
+
+        self.grl_tab_endereco.addWidget(self.txt_bairro, 5, 0, 1, 2)
+
+        self.lbl_cidade = QLabel(self.tab_endereco)
+        self.lbl_cidade.setObjectName(u"lbl_cidade")
+        self.lbl_cidade.setFont(font2)
+
+        self.grl_tab_endereco.addWidget(self.lbl_cidade, 0, 1, 1, 2)
+
+        self.lbl_cep = QLabel(self.tab_endereco)
+        self.lbl_cep.setObjectName(u"lbl_cep")
+        self.lbl_cep.setFont(font2)
+
+        self.grl_tab_endereco.addWidget(self.lbl_cep, 0, 0, 1, 1)
 
         self.txt_estado = QLineEdit(self.tab_endereco)
         self.txt_estado.setObjectName(u"txt_estado")
@@ -948,59 +1013,27 @@ class Ui_frm_registro_empresa(object):
 
         self.grl_tab_endereco.addWidget(self.txt_estado, 1, 3, 1, 1)
 
-        self.lbl_endereco = QLabel(self.tab_endereco)
-        self.lbl_endereco.setObjectName(u"lbl_endereco")
-        self.lbl_endereco.setFont(font2)
+        self.txt_cep = QLineEdit(self.tab_endereco)
+        self.txt_cep.setObjectName(u"txt_cep")
+        self.txt_cep.setMinimumSize(QSize(100, 20))
+        self.txt_cep.setMaximumSize(QSize(181, 16777215))
+        self.txt_cep.setFont(font2)
+        self.txt_cep.setStyleSheet(u"QLineEdit#txt_cep{\n"
+                                   "	background-color: #fff;\n"
+                                   "	border: 1px solid gray;\n"
+                                   "	border-radius: 5px;\n"
+                                   "}\n"
+                                   "QLineEdit#txt_cep:focus{\n"
+                                   "	border: 2px solid rgba(81, 203, 238, 1);\n"
+                                   "}\n"
+                                   "QLineEdit#txt_cep:disabled {\n"
+                                   "	background-color:  #dcdcdc;\n"
+                                   "	color: #6a6767;\n"
+                                   "	border: 1px solid gray;\n"
+                                   "}")
+        self.txt_cep.setMaxLength(9)
 
-        self.grl_tab_endereco.addWidget(self.lbl_endereco, 2, 0, 1, 1)
-
-        self.lbl_complemento = QLabel(self.tab_endereco)
-        self.lbl_complemento.setObjectName(u"lbl_complemento")
-        self.lbl_complemento.setFont(font2)
-
-        self.grl_tab_endereco.addWidget(self.lbl_complemento, 2, 2, 1, 1)
-
-        self.txt_endereco = QLineEdit(self.tab_endereco)
-        self.txt_endereco.setObjectName(u"txt_endereco")
-        self.txt_endereco.setMinimumSize(QSize(251, 20))
-        self.txt_endereco.setFont(font2)
-        self.txt_endereco.setStyleSheet(u"QLineEdit#txt_endereco{\n"
-                                        "	background-color: #fff;\n"
-                                        "	border: 1px solid gray;\n"
-                                        "	border-radius: 5px;\n"
-                                        "}\n"
-                                        "QLineEdit#txt_endereco:focus{\n"
-                                        "	border: 2px solid rgba(81, 203, 238, 1);\n"
-                                        "}\n"
-                                        "QLineEdit#ttxt_endereco:disabled {\n"
-                                        "	background-color:  #dcdcdc;\n"
-                                        "	color: #6a6767;\n"
-                                        "	border: 1px solid gray;\n"
-                                        "}")
-        self.txt_endereco.setMaxLength(100)
-
-        self.grl_tab_endereco.addWidget(self.txt_endereco, 3, 0, 1, 2)
-
-        self.txt_complemento = QLineEdit(self.tab_endereco)
-        self.txt_complemento.setObjectName(u"txt_complemento")
-        self.txt_complemento.setMinimumSize(QSize(251, 20))
-        self.txt_complemento.setFont(font2)
-        self.txt_complemento.setStyleSheet(u"QLineEdit#txt_complemento{\n"
-                                           "	background-color: #fff;\n"
-                                           "	border: 1px solid gray;\n"
-                                           "	border-radius: 5px;\n"
-                                           "}\n"
-                                           "QLineEdit#txt_complemento:focus{\n"
-                                           "	border: 2px solid rgba(81, 203, 238, 1);\n"
-                                           "}\n"
-                                           "QLineEdit#txt_complemento:disabled {\n"
-                                           "	background-color:  #dcdcdc;\n"
-                                           "	color: #6a6767;\n"
-                                           "	border: 1px solid gray;\n"
-                                           "}")
-        self.txt_complemento.setMaxLength(80)
-
-        self.grl_tab_endereco.addWidget(self.txt_complemento, 3, 2, 1, 2)
+        self.grl_tab_endereco.addWidget(self.txt_cep, 1, 0, 1, 1)
 
         self.lbl_bairro = QLabel(self.tab_endereco)
         self.lbl_bairro.setObjectName(u"lbl_bairro")
@@ -1008,26 +1041,9 @@ class Ui_frm_registro_empresa(object):
 
         self.grl_tab_endereco.addWidget(self.lbl_bairro, 4, 0, 1, 1)
 
-        self.txt_bairro = QLineEdit(self.tab_endereco)
-        self.txt_bairro.setObjectName(u"txt_bairro")
-        self.txt_bairro.setMinimumSize(QSize(251, 20))
-        self.txt_bairro.setFont(font2)
-        self.txt_bairro.setStyleSheet(u"QLineEdit#txt_bairro{\n"
-                                      "	background-color: #fff;\n"
-                                      "	border: 1px solid gray;\n"
-                                      "	border-radius: 5px;\n"
-                                      "}\n"
-                                      "QLineEdit#txt_bairro:focus{\n"
-                                      "	border: 2px solid rgba(81, 203, 238, 1);\n"
-                                      "}\n"
-                                      "QLineEdit#txt_bairro:disabled {\n"
-                                      "	background-color:  #dcdcdc;\n"
-                                      "	color: #6a6767;\n"
-                                      "	border: 1px solid gray;\n"
-                                      "}")
-        self.txt_bairro.setMaxLength(70)
+        self.separacao_campos_endereco_borda = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.grl_tab_endereco.addWidget(self.txt_bairro, 5, 0, 1, 2)
+        self.grl_tab_endereco.addItem(self.separacao_campos_endereco_borda, 6, 0, 1, 1)
 
         self.tab_informcoes.addTab(self.tab_endereco, "")
 
@@ -1156,13 +1172,13 @@ class Ui_frm_registro_empresa(object):
         self.grl_tab_matriz.addItem(self.separacao_campos_matriz_borda_tab_widget, 4, 1, 1, 1)
 
         self.tab_informcoes.addTab(self.tab_matriz, "")
-        
+
         self.tab_geral = QWidget()
         self.tab_geral.setObjectName(u"tab_geral")
 
         self.grl_tab_geral = QGridLayout(self.tab_geral)
         self.grl_tab_geral.setObjectName(u"grl_tab_geral")
-        
+
         self.lbl_situacao = QLabel(self.tab_geral)
         self.lbl_situacao.setObjectName(u"lbl_situacao")
         self.lbl_situacao.setFont(font2)
@@ -1326,14 +1342,15 @@ class Ui_frm_registro_empresa(object):
 
         self.tab_informcoes.addTab(self.tab_geral, "")
 
-        self.grl_compos_dados.addWidget(self.tab_informcoes, 12, 0, 1, 5)
+        self.grl_campo_dados.addWidget(self.tab_informcoes, 12, 0, 1, 5)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.separacao_celular_borda_lateral = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.grl_compos_dados.addItem(self.horizontalSpacer, 9, 2, 1, 1)
+        self.grl_campo_dados.addItem(self.separacao_celular_borda_lateral, 9, 2, 1, 1)
 
+        self.vrl_main_registro_empresa.addWidget(self.grb_compos_dados)
 
-        self.grl_registro_empresa.addWidget(self.grb_compos_dados, 1, 0, 1, 1)
+        self.grl_registro_empresa.addWidget(self.fra_main_registro_empresa, 0, 0, 1, 1)
 
         QWidget.setTabOrder(self.txt_codigo, self.cb_tipo_pessoa)
         QWidget.setTabOrder(self.cb_tipo_pessoa, self.cb_tipo_empresa)
@@ -1367,9 +1384,7 @@ class Ui_frm_registro_empresa(object):
 
         self.tab_informcoes.setCurrentIndex(0)
 
-
         QMetaObject.connectSlotsByName(frm_registro_empresa)
-    # setupUi
 
     def retranslateUi(self, frm_registro_empresa):
         frm_registro_empresa.setWindowTitle(QCoreApplication.translate("frm_registro_empresa", u"Cadastro Empresa", None))
@@ -1520,4 +1535,3 @@ class Ui_frm_registro_empresa(object):
         self.txt_observcao.setToolTip(QCoreApplication.translate("frm_registro_empresa", u"Observa\u00e7\u00e3o", None))
         self.txt_observcao.setWhatsThis(QCoreApplication.translate("frm_registro_empresa", u"<html><head/><body><p>Campo de observa\u00e7\u00f5es da empresa</p></body></html>", None))
         self.tab_informcoes.setTabText(self.tab_informcoes.indexOf(self.tab_geral), QCoreApplication.translate("frm_registro_empresa", u"Geral", None))
-

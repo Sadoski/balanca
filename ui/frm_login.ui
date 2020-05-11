@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frm_login</class>
+ <widget class="QWidget" name="frm_login">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>521</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>521</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>521</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Log-In</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QFrame" name="fra_lateral">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>151</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame {
+	background: rgb(255,255,255,.9)
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="lbl_login">
+    <property name="geometry">
+     <rect>
+      <x>27</x>
+      <y>10</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	color: gray;
+	font-size:32px;
+	background: transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string>LOGIN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_logo">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>87</y>
+      <width>111</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	background: transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../imagens/logo-bl-.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="fra_campos_login">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>0</y>
+     <width>371</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame {
+    background: rgb(0,0,74,.9);
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLineEdit" name="txt_senha">
+    <property name="geometry">
+     <rect>
+      <x>26</x>
+      <y>130</y>
+      <width>321</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>321</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo da senha do usuário&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit#txt_senha{
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid white;
+	color: white;
+}
+QLineEdit#txt_senha:focus{
+	border-bottom: 1px solid rgba(81, 203, 238, 1);
+}
+</string>
+    </property>
+    <property name="maxLength">
+     <number>75</number>
+    </property>
+    <property name="placeholderText">
+     <string>Senha</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txt_usuario">
+    <property name="geometry">
+     <rect>
+      <x>26</x>
+      <y>80</y>
+      <width>321</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>321</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Campo do nome de usuário&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit#txt_usuario{
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid white;
+	color: white;
+}
+QLineEdit#txt_usuario:focus{
+	border-bottom: 1px solid rgba(81, 203, 238, 1);
+}
+</string>
+    </property>
+    <property name="maxLength">
+     <number>75</number>
+    </property>
+    <property name="placeholderText">
+     <string>Usuário</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_minimizar">
+    <property name="geometry">
+     <rect>
+      <x>316</x>
+      <y>0</y>
+      <width>28</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>28</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btn_minimizar{
+	color: white;
+	border:1px;
+	background: transparent;
+}
+QPushButton#btn_minimizar:hover{
+	background: rgba(255,255,255,.1);
+}
+QPushButton#btn_minimizar:pressed {
+	background: rgba(255,255,255,.2);
+}</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../imagens/minimizar-.png</normaloff>../imagens/minimizar-.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>16</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_close">
+    <property name="geometry">
+     <rect>
+      <x>344</x>
+      <y>0</y>
+      <width>28</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>28</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btn_close{
+	border: 0px;
+	background: transparent;
+}
+QPushButton#btn_close:hover{
+	border: 0px solid rgba(255,255,255,.1);
+	background: rgba(255,255,255,.1);
+}
+QPushButton#btn_close:pressed {
+	border: 0px solid rgba(255,255,255,.1);
+	background: rgba(255,255,255,.2);
+}</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../imagens/fechar.png</normaloff>../imagens/fechar.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>16</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_login">
+    <property name="geometry">
+     <rect>
+      <x>26</x>
+      <y>160</y>
+      <width>321</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
+    </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão para autenticar o usuário para acessar o sistema&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btn_login{
+	background-color: #0080ff ;
+	color: #fff;
+	border-radius: 5px;
+}
+QPushButton#btn_login:hover{
+	background-color:  #0073e6;
+}
+QPushButton#btn_login:pressed {
+	background-color: #0059b3;
+}
+QPushButton#btn_login:disabled {
+	background-color:  #a6a6a6;
+	color: #6a6767;
+}</string>
+    </property>
+    <property name="text">
+     <string>Log-In</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>36</width>
+      <height>36</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_esqueci_senha">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>270</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
+    </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Botão caso tenha esquecido a senha&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btn_esqueci_senha{
+	color: white;
+	border: 1px;
+	font-style:italic;
+	background: transparent;
+}
+QPushButton#btn_esqueci_senha:hover{
+	border-bottom: 1px solid white;
+}
+QPushButton#btn_esqueci_senha:pressed {
+	border-bottom: 1px solid white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Esqueceu a senha?</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>36</width>
+      <height>36</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>txt_usuario</tabstop>
+  <tabstop>txt_senha</tabstop>
+  <tabstop>btn_esqueci_senha</tabstop>
+  <tabstop>btn_minimizar</tabstop>
+  <tabstop>btn_close</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

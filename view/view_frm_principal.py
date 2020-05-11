@@ -4,10 +4,13 @@ Modulo de controle e visualização do formulário principal da aplicação
 """
 from PySide2 import QtCore, QtGui, QtWidgets
 from formulario.frm_principal import Ui_frm_principal
+from formulario.ui_frm_principal_novo import UiFrmPrincipal
+from funcoes.funcoes import Funcoes
+from view.view_frm_cadastro_cliente import CadastroCliente
 from view.view_frm_cadastro_empresa import CadastroEmpresa
 
 
-class Principal(QtWidgets.QMainWindow):
+class Principal(QtWidgets.QMainWindow, Funcoes):
     """
     Classe da janela principal da aplicação
     Herança:
@@ -19,13 +22,12 @@ class Principal(QtWidgets.QMainWindow):
         Inicializador da classe instanciando o formulario principal e seus componentes
         """
         QtWidgets.QMainWindow.__init__(self)
-        self.__ui = Ui_frm_principal()
+        self.__ui = UiFrmPrincipal()
         self.__ui.setupUi(self)
 
         # Inicio das ações dos botões do formulário
         self.__ui.btn_slider.clicked.connect(self.slider)
         self.__ui.btn_maximize.clicked.connect(self.maximinizar_ou_resetar)
-        self.__ui.btn_maximize_rest.clicked.connect(self.maximinizar_ou_resetar)
         self.__ui.btn_close.clicked.connect(self.close)
         # Fim das ações dos botões do formulário
 
@@ -38,7 +40,24 @@ class Principal(QtWidgets.QMainWindow):
         self.__ui.btn_configuracao.clicked.connect(self.submenu_configuracao)
         # Fim das ações dos botões dos menus Superior
 
+        # Inicio das ações dos botões dos sub-menus
         self.__ui.btn_cadastro_empresa.clicked.connect(self.formulario_cadastro_empresa)
+        self.__ui.btn_cadastro_cliente.clicked.connect(self.formulario_cadastro_cliente)
+        # Inicio das ações dos botões dos sub-menus
+
+        def moveWindow(event):
+            """
+            Metoto de evento a ação de mover o formulário
+            Parâmetro:
+                - event: evento do formulário
+            """
+            if event.buttons() == QtCore.Qt.LeftButton:
+                delta = QtCore.QPoint(event.globalPos() - self.oldPos)
+                self.move(self.x() + delta.x(), self.y() + delta.y())
+                self.oldPos = event.globalPos()
+
+        # Designar que o campo do formulário ao ser selecionado possa mover o formulário
+        self.__ui.fra_menu_horizontal.mouseMoveEvent = moveWindow
 
     def mousePressEvent(self, event):
         """
@@ -48,28 +67,23 @@ class Principal(QtWidgets.QMainWindow):
         """
         self.oldPos = event.globalPos()
 
-    def mouseMoveEvent(self, event):
-        """
-        Metoto de evento a ação de mover o formulário
-        Parâmetro:
-            - event: evento do formulário
-        """
-        delta = QtCore.QPoint(event.globalPos() - self.oldPos)
-        self.move(self.x() + delta.x(), self.y() + delta.y())
-        self.oldPos = event.globalPos()
-
     def maximinizar_ou_resetar(self):
         """
         Metodo para maximizar a janela do formulário ou restaurar a forma anterior
         """
         if self.isMaximized():
             self.showNormal()
-            self.__ui.btn_maximize.setVisible(True)
-            self.__ui.btn_maximize_rest.setVisible(False)
+            maximize = QtGui.QIcon()
+            maximize.addFile(u"./imagens/maximize.png", QtCore.QSize(), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.__ui.btn_maximize.setIcon(maximize)
+            self.__ui.fra_size_grid.show()
+
         else:
             self.showMaximized()
-            self.__ui.btn_maximize.setVisible(False)
-            self.__ui.btn_maximize_rest.setVisible(True)
+            rest_maximize = QtGui.QIcon()
+            rest_maximize.addFile(u"./imagens/rest-maximize.png", QtCore.QSize(), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.__ui.btn_maximize.setIcon(rest_maximize)
+            self.__ui.fra_size_grid.hide()
 
     def submenu_cadastro(self):
         """
@@ -132,6 +146,28 @@ class Principal(QtWidgets.QMainWindow):
             self.__ui.fra_menu_vertical.setMinimumSize(QtCore.QSize(78, 0))
             self.__ui.fra_menu_vertical.setMaximumSize(QtCore.QSize(78, 16777215))
 
+    def status_bar(self):
+        # Função para inserção de informações no statusbar
+        self.label = QtWidgets.QLabel("Seja Muito Bem-Vindo ")
+        #self.label.setFrameStyle(QtWidgets.QFrame.StyledPanel | QtWidgets.QFrame.Sunken)
+        #self.label.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
+        self.__ui.status_bar.addPermanentWidget(self.label, 2)
+        self.time = QtWidgets.QLabel()
+        #self.time.setFrameStyle(QtWidgets.QFrame.StyledPanel | QtWidgets.QFrame.Sunken)
+        self.__ui.status_bar.addPermanentWidget(self.time)
+        #self.__ui.status_bar.setSizeGripEnabled(False)
+
+
+    def limpar_frame(self):
+        self.limpa_formulario(self.__ui.fra_conteudo)
+
     def formulario_cadastro_empresa(self):
+        self.limpa_formulario(self.__ui.fra_conteudo)
         cadastro_empresa = CadastroEmpresa()
         cadastro_empresa.frm_cadastro_empresa(self.__ui.fra_conteudo)
+
+    def formulario_cadastro_cliente(self):
+        self.limpa_formulario(self.__ui.fra_conteudo)
+        cadastro_cliente = CadastroCliente()
+        cadastro_cliente.frm_cadastro_empresa(self.__ui.fra_conteudo)
+

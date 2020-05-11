@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>839</width>
-    <height>812</height>
+    <height>795</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -30,9 +30,6 @@
   </property>
   <widget class="QWidget" name="cwd_corpo_principal">
    <layout class="QGridLayout" name="grl_principal">
-    <property name="sizeConstraint">
-     <enum>QLayout::SetMaximumSize</enum>
-    </property>
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -48,252 +45,7 @@
     <property name="spacing">
      <number>0</number>
     </property>
-    <item row="1" column="1">
-     <widget class="QFrame" name="fra_conteudo">
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QFrame" name="fra_menu_horizontal">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>41</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>41</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QFrame{
-	background: white;
-}</string>
-      </property>
-      <layout class="QGridLayout" name="grl_menu_horizontal">
-       <property name="leftMargin">
-        <number>5</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item row="0" column="1" rowspan="2">
-        <spacer name="separador_vertical_menu_horizontal">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>38</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="3">
-        <widget class="QPushButton" name="btn_minimizar">
-         <property name="styleSheet">
-          <string notr="true">QPushButton#btn_minimizar:hover{
-	border: 0px solid rgba(31,31,31,.1);
-	background: rgba(31,31,31,.1);
-}
-QPushButton#btn_minimizar:pressed {
-	border: 0px solid rgba(31,31,31,.1);
-	background: rgba(31,31,31,.2);
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../imagens/minimizar-.png</normaloff>../imagens/minimizar-.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>16</width>
-           <height>16</height>
-          </size>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="6">
-        <widget class="QPushButton" name="btn_close">
-         <property name="styleSheet">
-          <string notr="true">QPushButton#btn_close:hover{
-	border: 0px solid rgba(31,31,31,.1);
-	background: rgba(31,31,31,.1);
-}
-QPushButton#btn_close:pressed {
-	border: 0px solid rgba(31,31,31,.1);
-	background: rgba(31,31,31,.2);
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../imagens/fechar.png</normaloff>../imagens/fechar.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>16</width>
-           <height>16</height>
-          </size>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <widget class="QPushButton" name="btn_maximize_rest">
-         <property name="styleSheet">
-          <string notr="true">QPushButton#btn_maximize_rest:hover{
-	border: 0px solid rgba(31,31,31,.1);
-	background: rgba(31,31,31,.1);
-}
-QPushButton#btn_maximize_rest:pressed {
-	border: 0px solid rgba(31,31,31,.1);
-	background: rgba(31,31,31,.2);
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../imagens/rest-maximize.png</normaloff>../imagens/rest-maximize.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>16</width>
-           <height>16</height>
-          </size>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" rowspan="2">
-        <widget class="QPushButton" name="btn_slider">
-         <property name="styleSheet">
-          <string notr="true">QPushButton#btn_slider{
-	border-radius: 5px;
-}
-QPushButton#btn_slider:hover{
-	border: 1px solid rgba(31,31,31,.1);
-	background: rgba(31,31,31,.1);
-}
-QPushButton#btn_slider:pressed {
-	border: 1px solid rgba(31,31,31,.1);
-	background: rgba(31,31,31,.2);
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../imagens/slider.png</normaloff>../imagens/slider.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-         <property name="default">
-          <bool>false</bool>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2" rowspan="2">
-        <spacer name="separador_horizontal_menu_horizontal">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>625</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="5">
-        <widget class="QPushButton" name="btn_maximize">
-         <property name="styleSheet">
-          <string notr="true">QPushButton#btn_maximize:hover{
-	border: 0px solid rgba(31,31,31,.1);
-	background: rgba(31,31,31,.1);
-}
-QPushButton#btn_maximize:pressed {
-	border: 0px solid rgba(31,31,31,.1);
-	background: rgba(31,31,31,.2);
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../imagens/maximize.png</normaloff>../imagens/maximize.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>16</width>
-           <height>16</height>
-          </size>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="0" rowspan="2">
+    <item row="0" column="0" rowspan="3">
      <widget class="QFrame" name="fra_menu_vertical">
       <property name="minimumSize">
        <size>
@@ -797,22 +549,6 @@ QPushButton#btn_relatorio:pressed {
            </property>
            <property name="flat">
             <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1" rowspan="10">
-          <widget class="QScrollBar" name="vsb_menu">
-           <property name="minimumSize">
-            <size>
-             <width>12</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>10</width>
-             <height>16777215</height>
-            </size>
            </property>
           </widget>
          </item>
@@ -1873,6 +1609,421 @@ QPushButton#btn_inicio:pressed {
       </layout>
      </widget>
     </item>
+    <item row="0" column="1">
+     <widget class="QFrame" name="fra_menu_horizontal">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>41</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>41</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background: white;
+}</string>
+      </property>
+      <layout class="QGridLayout" name="grl_menu_horizontal">
+       <property name="leftMargin">
+        <number>5</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="1" rowspan="2">
+        <spacer name="separador_vertical_menu_horizontal">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>38</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="0" rowspan="2">
+        <widget class="QPushButton" name="btn_slider">
+         <property name="styleSheet">
+          <string notr="true">QPushButton#btn_slider{
+	border-radius: 5px;
+}
+QPushButton#btn_slider:hover{
+	border: 1px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_slider:pressed {
+	border: 1px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.2);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../imagens/slider.png</normaloff>../imagens/slider.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QPushButton" name="btn_close">
+         <property name="styleSheet">
+          <string notr="true">QPushButton#btn_close:hover{
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_close:pressed {
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.2);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../imagens/fechar.png</normaloff>../imagens/fechar.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="btn_minimizar">
+         <property name="styleSheet">
+          <string notr="true">QPushButton#btn_minimizar:hover{
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_minimizar:pressed {
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.2);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../imagens/minimizar-.png</normaloff>../imagens/minimizar-.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" rowspan="2">
+        <spacer name="separador_horizontal_menu_horizontal">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>625</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="4">
+        <widget class="QPushButton" name="btn_maximize">
+         <property name="styleSheet">
+          <string notr="true">QPushButton#btn_maximize:hover{
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.1);
+}
+QPushButton#btn_maximize:pressed {
+	border: 0px solid rgba(31,31,31,.1);
+	background: rgba(31,31,31,.2);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../imagens/maximize.png</normaloff>../imagens/maximize.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QFrame" name="fra_conteudo">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QFrame" name="fra_status_bar">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background: white;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="hzl_status_bar">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="fra_main_status_bar">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+	border-style: solid;
+	border-right-width: 2px;
+	border-color: gray;
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="hzl_main_status_bar">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lbl_bem_vindo">
+            <property name="minimumSize">
+             <size>
+              <width>230</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #474747;
+}</string>
+            </property>
+            <property name="text">
+             <string>Bem-Vindo </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_versao">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #474747;
+}</string>
+            </property>
+            <property name="text">
+             <string>Versão</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_logoff">
+            <property name="minimumSize">
+             <size>
+              <width>70</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>70</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #474747;</string>
+            </property>
+            <property name="text">
+             <string>Logoff</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../imagens/peer_to_peer.png</normaloff>../imagens/peer_to_peer.png</iconset>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_formulario">
+            <property name="minimumSize">
+             <size>
+              <width>151</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>172</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #474747;
+	border-style: solid;
+	border-left-width: 2px;
+	border-color: gray;
+}</string>
+            </property>
+            <property name="text">
+             <string>Formulário</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="fra_size_grid">
+         <property name="minimumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QSizeGrip {
+
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
@@ -1927,22 +2078,6 @@ QPushButton#btn_inicio:pressed {
    </hints>
   </connection>
   <connection>
-   <sender>btn_maximize_rest</sender>
-   <signal>clicked()</signal>
-   <receiver>frm_principal</receiver>
-   <slot>showNormal()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>768</x>
-     <y>11</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>419</x>
-     <y>254</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>btn_maximize</sender>
    <signal>clicked(bool)</signal>
    <receiver>btn_maximize</receiver>
@@ -1954,22 +2089,6 @@ QPushButton#btn_inicio:pressed {
     </hint>
     <hint type="destinationlabel">
      <x>796</x>
-     <y>11</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_maximize_rest</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>btn_maximize_rest</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>768</x>
-     <y>11</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>768</x>
      <y>11</y>
     </hint>
    </hints>
@@ -2051,22 +2170,6 @@ QPushButton#btn_inicio:pressed {
     <hint type="destinationlabel">
      <x>88</x>
      <y>459</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_slider</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>vsb_menu</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>249</x>
-     <y>19</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>217</x>
-     <y>428</y>
     </hint>
    </hints>
   </connection>
