@@ -30,7 +30,6 @@ class FrmRegistroEmpresa(object):
         self.grl_registro_empresa = QGridLayout(frm_registro_empresa)
         self.grl_registro_empresa.setSpacing(0)
         self.grl_registro_empresa.setObjectName(u"grl_registro_empresa")
-        self.grl_registro_empresa.setSizeConstraint(QLayout.SetMinimumSize)
         self.grl_registro_empresa.setContentsMargins(0, 0, 0, 0)
 
         self.fra_main_registro_empresa = QFrame(frm_registro_empresa)

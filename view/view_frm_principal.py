@@ -3,14 +3,13 @@
 Modulo de controle e visualização do formulário principal da aplicação
 """
 from PySide2 import QtCore, QtGui, QtWidgets
-from formulario.frm_principal import Ui_frm_principal
-from formulario.ui_frm_principal_novo import UiFrmPrincipal
+from formulario.frm_principal import UiFrmPrincipal
 from funcoes.funcoes import Funcoes
 from view.view_frm_cadastro_cliente import CadastroCliente
 from view.view_frm_cadastro_empresa import CadastroEmpresa
 
 
-class Principal(QtWidgets.QMainWindow, Funcoes):
+class Principal(QtWidgets.QMainWindow, CadastroCliente, CadastroEmpresa, Funcoes):
     """
     Classe da janela principal da aplicação
     Herança:
@@ -146,28 +145,11 @@ class Principal(QtWidgets.QMainWindow, Funcoes):
             self.__ui.fra_menu_vertical.setMinimumSize(QtCore.QSize(78, 0))
             self.__ui.fra_menu_vertical.setMaximumSize(QtCore.QSize(78, 16777215))
 
-    def status_bar(self):
-        # Função para inserção de informações no statusbar
-        self.label = QtWidgets.QLabel("Seja Muito Bem-Vindo ")
-        #self.label.setFrameStyle(QtWidgets.QFrame.StyledPanel | QtWidgets.QFrame.Sunken)
-        #self.label.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
-        self.__ui.status_bar.addPermanentWidget(self.label, 2)
-        self.time = QtWidgets.QLabel()
-        #self.time.setFrameStyle(QtWidgets.QFrame.StyledPanel | QtWidgets.QFrame.Sunken)
-        self.__ui.status_bar.addPermanentWidget(self.time)
-        #self.__ui.status_bar.setSizeGripEnabled(False)
-
-
-    def limpar_frame(self):
-        self.limpa_formulario(self.__ui.fra_conteudo)
-
     def formulario_cadastro_empresa(self):
         self.limpa_formulario(self.__ui.fra_conteudo)
-        cadastro_empresa = CadastroEmpresa()
-        cadastro_empresa.frm_cadastro_empresa(self.__ui.fra_conteudo)
+        self.frm_cadastro_empresa(self.__ui.fra_conteudo)
 
     def formulario_cadastro_cliente(self):
         self.limpa_formulario(self.__ui.fra_conteudo)
-        cadastro_cliente = CadastroCliente()
-        cadastro_cliente.frm_cadastro_empresa(self.__ui.fra_conteudo)
+        self.frm_cadastro_cliente(self.__ui.fra_conteudo)
 
